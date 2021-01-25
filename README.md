@@ -21,4 +21,4 @@
   Contributions are welcome. Submit a pull request or open an issue if you would like make improvements.
 
  ## License
-  GNU GENERAL PUBLIC LICENSE:  <http://gnugpl.org/>
+  GNU GENERAL PUBLIC LICENSE:  <https://www.gnu.org/licenses/gpl-3.0.txt>
