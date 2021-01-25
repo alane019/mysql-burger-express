@@ -9,3 +9,7 @@ values ("OK Burger", false);
 
 insert into burgers(burger_name, devoured)
 values ("Not So Good Burger", false);
+
+insert into burgers(burger_name, devoured)
+values ("Budget Burger", false);
+
