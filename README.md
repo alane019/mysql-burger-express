@@ -22,3 +22,5 @@
 
  ## License
   GNU GENERAL PUBLIC LICENSE:  <https://www.gnu.org/licenses/gpl-3.0.txt>
+ 
+  Learn more at <http://gnugpl.org/>
