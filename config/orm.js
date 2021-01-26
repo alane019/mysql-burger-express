@@ -1,5 +1,5 @@
 const mysql = require('mysql2');
-const connection = require('./connection');
+const connection = require('./connection.js');
 // object relational mapper (orm)
 
 var orm = {

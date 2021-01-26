@@ -8,7 +8,7 @@ const connection = mysql.createConnection({
     database: 'burgers_db'
 });
 
-    connection.Connect((err) => {
+    connection.connect((err) => {
         if (err) throw err;
 
             console.log(` user: ${connection.config.user}`);

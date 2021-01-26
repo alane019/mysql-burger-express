@@ -1,0 +1,32 @@
+<h1>MySQL Burger Express</h1>
+
+<h2>Burgers, not yet devoured</h2>
+<ul>
+  {{#each burgers}}
+    {{#unless devoured}}
+      {{> burgers/undevoured-block devoured=false}}
+    {{/unless}}
+  {{/each}}
+</ul>
+
+
+<h2>Burgers, devoured</h2>
+<ul>
+  {{#each burgers}}
+    {{#if devoured}}
+      {{> burgers/devoured-block devoured=true}}
+    {{/if}}
+  {{/each}}
+</ul>
+
+		
+ <h2>Add new burger</h2>
+    <form method="POST"  class="create-form">
+        <div class="form-group">
+            <label for="burger_name">Burger Name: </label>
+            <input type="text" id="burger_name" name="burger_name">
+        </div>
+        <button type="submit">Add Burger</button>
+    </form>
+
+
