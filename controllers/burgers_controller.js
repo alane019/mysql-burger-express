@@ -18,10 +18,12 @@ router.get("/", function(req, res){
 
 // sql insert route
 //orm params are:  (col, val, cb)
-router.post("/api/burgers", function(req,res){
+router.post("/api/burgers/create", function(req,res){
     burger.insertOne(req.body.burger_name,
          req.body.devoured, function(result){
+            console.log(" LOG result >>>>  @ /api/burgers/create >>> " + result)
              res.json({ id: result.insertId });
+             res.redirect("/");
          });
 });
 

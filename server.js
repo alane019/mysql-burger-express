@@ -1,14 +1,17 @@
 const express = require("express");
 const connection = require('./config/connection.js');
-
-// for heroku deployment
-const PORT = process.env.PORT || 8080;
+var routes = require("./controllers/burgers_controller.js");
 
 const app = express();
 
+app.use(express.static(__dirname + '/public'));
+
+// for heroku deployment
+var PORT = process.env.PORT || 8080;
+
+
 var bodyParser = require('body-parser');
 
-app.use(express.static(__dirname + '/public'));
 
 app.use(bodyParser.urlencoded({
    extended: false
@@ -16,13 +19,15 @@ app.use(bodyParser.urlencoded({
 
 // Parse application body as JSON
 app.use(bodyParser.json());
+const router = express.Router();
+
 
 var exphbs = require("express-handlebars");
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-var routes = require("./controllers/burgers_controller.js");
+
 
 app.use(routes);
 
