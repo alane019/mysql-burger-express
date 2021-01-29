@@ -5,6 +5,7 @@ const router = express.Router();
 const burger = require("../models/burger.js");
 const connection = require('../config/connection.js');
 
+
 // sql select route
 router.get("/", function(req, res){
     burger.selectAll(function(data) {

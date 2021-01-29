@@ -15,6 +15,7 @@ const connection = mysql.createConnection({
             console.log(` connected to database: ${connection.config.database}`);
             console.log(`   port: ${connection.config.port}`);
             console.log(`   host: ${connection.config.host}`);  
+            console.log("");
     }); 
 
     module.exports = connection;  
