@@ -17,6 +17,8 @@ function printQuestionMarks(num) {
 /////////
 
 //convert object from client to SQL syntax
+         // e.g. {burger_name: 'Good Burger'} => ["burger_name='Good Burger'"]
+         // e.g. {devoured: true} => ["devoured=true"]
 function objToSql(ob) {
 	var arr = [];
 	for (var key in ob) {
@@ -26,9 +28,8 @@ function objToSql(ob) {
 		// if string with space
 		if (typeof value === "string" && value.indexOf(" ") >= 0) {
 			value = "'" + value + "'";
-      	}
-         // e.g. {burger_name: 'Good Burger'} => ["burger_name='Good Burger'"]
-         // e.g. {devoured: true} => ["devoured=true"]
+      }
+
       arr.push(key + "=" + value);
     }
   }
@@ -70,7 +71,7 @@ var orm = {
         console.log(queryString);
         
         connection.query(queryString, vals, function(err, result){
-            if (err) throw err;                           
+          if(err) throw err;                   
   
             console.log(result);
             cb(result);
@@ -80,13 +81,13 @@ var orm = {
     ////////////
 
     updateOne: function(targetTable, objColVals, condition, cb){
-        var queryString = "UPDATE" + targetTable; 
+        var queryString = "UPDATE " + targetTable; 
         queryString += " SET " + objToSql(objColVals); 
         queryString += " WHERE " + condition; 
 
 
         connection.query(queryString, function(err, result){
-            if (err) throw err; 
+          if (err) console.error(err);    
             cb(result);
             console.log(result);
         });
@@ -96,6 +97,7 @@ var orm = {
     deleteOne: function(targetTable, condition, cb) {
        let queryStr = "DELETE FROM " + targetTable; 
        queryStr += " WHERE " + condition; 
+       
        connection.query(queryStr, function(err, result){
          if(err) throw err; 
          cb(result); 

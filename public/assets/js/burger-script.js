@@ -8,7 +8,7 @@ $(function() {
 
         //var id = $(this).data("id"); [only need this for state change]
         let newBurger = {
-            burger_name: $("#new_burger").val.trum,
+            burger_name: $("#new_burger").val().trim(),
         }
 
         console.log("new burger: ", newBurger);
@@ -26,26 +26,31 @@ $(function() {
 // - - - Update the state of the burger - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - 
 
  $(".change-devoured").on("click", function(event){
-     // this is referr
+    
+  // Button element prepared in partials file includes
+   // html data-id and data-newdevoured 
+   // values are set by handlebars template engine at
+   // the time the element is rendered to the web page
+   var id = $(this).data("id");
+   // var newDevoured = $(this).data("newdevoured");
 
      var newDevouredState = {
-        devoured: newDevoured
+        devoured: true
     };
 
-    // send the http PUT request
-    $.ajax("/api/burgers/" + IDBCursor, {
+    // send the http PUT request to controllers to direct as needed
+    $.ajax("/api/burgers/" + id, {
         type: "PUT",
         data: newDevouredState
     }).then(
         function() {
-            console.log("changed devoured to", newDevoured);
+            console.log("Burger devoured");
             // this reloads the page, which will display the updated list
             location.reload();
-        }
-    );
+        });
  });
  
- // - - - Update the state of the burger - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - 
+ // - - - Delete burger - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - 
 
 
 
