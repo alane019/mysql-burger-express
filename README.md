@@ -3,7 +3,7 @@
  
   This hamburger-themed project serves as a demonstration of the MVC design pattern, using Node, MySQL, Express, and Handlebars as the html templating engine for the view portion. In addition, this project demonstrates deployment of a full stack web application to a Heroku cloud environment.
 
-  ![screenshot.png](https://raw.githubusercontent.com/alane019/mysql-burger-express/main/public/assets/images/screenshot.png)
+  ![screenshot.png](https://raw.githubusercontent.com/alane019/mysql-burger-express/main/public/assets/images/screenshot.PNG)
 
  ## Table of Contents
   * [Installation](#Installation)
