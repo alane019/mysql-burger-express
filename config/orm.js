@@ -1,32 +1,47 @@
-// backup @ 1242 on friday 1/27
-//const mysql = require('mysql2');
-
 // object relational mapper (orm)
 
 const connection = require('./connection.js');
 
 /////////////////////////////////////////////////
 
-let questionMarks = (arrOfVals, err) => {
+function printQuestionMarks(num) {
+  var arr = [];
 
-    if (err) throw err; 
+  for (var i = 0; i < num; i++) {
+    arr.push("?");
+  }
 
-        let outString = "";
-       for(let i = 0; i < arrOfVals.length; i++){
-           
-    console.log("arrOfVals[i]: " + arrOfVals[i]);
-            outString = outString + "? "; 
-       }
-       
-       return outString; 
+  return arr.toString();
+} 
+
+/////////
+
+//convert object from client to SQL syntax
+function objToSql(ob) {
+	var arr = [];
+	for (var key in ob) {
+		var value = ob[key];
+		// check to skip hidden properties
+		if (Object.hasOwnProperty.call(ob, key)) {
+		// if string with space
+		if (typeof value === "string" && value.indexOf(" ") >= 0) {
+			value = "'" + value + "'";
+      	}
+         // e.g. {burger_name: 'Good Burger'} => ["burger_name='Good Burger'"]
+         // e.g. {devoured: true} => ["devoured=true"]
+      arr.push(key + "=" + value);
+    }
+  }
+
+  // translate array of strings to a single comma-separated string
+  return arr.toString();
 }
 
-
+/////////
 
 var orm = {
     selectAll: function(targetTable, cb){
-        
-        var queryString = "SELECT * from " + targetTable;       
+        let queryString = "SELECT * from " + targetTable;       
 
         console.log(queryString);
         
@@ -41,10 +56,20 @@ var orm = {
 
     },
 
+    /////////
+
     insertOne: function(targetTable, cols, vals, cb){
-        var queryString = "INSERT INTO " + targetTable + " (" + questionMarks + ") " + "VALUES ("  +  vals  + ")";
+        let queryString = "INSERT INTO " + targetTable;
+        queryString += " (";
+        queryString += cols.toString();
+        queryString += ") "; 
+        queryString += "VALUES (";
+        queryString += printQuestionMarks(vals.length);
+        queryString += ") ";
+        
         console.log(queryString);
-        connection.query(queryString, [targetTable, cols, vals], function(err, result){
+        
+        connection.query(queryString, vals, function(err, result){
             if (err) throw err;                           
   
             console.log(result);
@@ -52,20 +77,32 @@ var orm = {
         });
     },
 
-    updateOne: function(targetTable, col1, val1, cb){
-        var queryString = "UPDATE ??  SET ??  = ?";   console.log(queryString);
-        connection.query(queryString, [targetTable, col1, val1], function(err, result){
+    ////////////
+
+    updateOne: function(targetTable, objColVals, condition, cb){
+        var queryString = "UPDATE" + targetTable; 
+        queryString += " SET " + objToSql(objColVals); 
+        queryString += " WHERE " + condition; 
+
+
+        connection.query(queryString, function(err, result){
             if (err) throw err; 
             cb(result);
             console.log(result);
         });
+    }, 
+
+
+    deleteOne: function(targetTable, condition, cb) {
+       let queryStr = "DELETE FROM " + targetTable; 
+       queryStr += " WHERE " + condition; 
+       connection.query(queryStr, function(err, result){
+         if(err) throw err; 
+         cb(result); 
+       });
     }
-
-
 
 } 
 
 module.exports = orm; 
 
-
-// */

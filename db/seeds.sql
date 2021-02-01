@@ -1,15 +1,15 @@
-insert into burgers(burger_name, devoured)
-values ("Awesome Burger", false);
+insert into burgers (burger_name)
+values ("Awesome Burger");
 
-insert into burgers(burger_name, devoured)
-values ("Good Burger", false);
+insert into burgers (burger_name)
+values ("Good Burger");
 
-insert into burgers(burger_name, devoured)
-values ("OK Burger", false);
+insert into burgers (burger_name)
+values ("OK Burger");
 
-insert into burgers(burger_name, devoured)
-values ("Not So Good Burger", false);
+insert into burgers (burger_name)
+values ("Not So Good Burger");
 
-insert into burgers(burger_name, devoured)
-values ("Budget Burger", false);
+insert into burgers (burger_name)
+values ("Budget Burger");
 

@@ -3,33 +3,38 @@ const express = require("express");
 const router = express.Router();
 
 const burger = require("../models/burger.js");
-const connection = require('../config/connection.js');
 
 
-// sql select route
+//controller to handle the http get request that's sent when when index page loads
 router.get("/", function(req, res){
     burger.selectAll(function(data) {
         var hbsObject = {
-            burger: data
+            burgers: data
         };
+    console.log(" [[  router.get('/', ---->      console.log(hbsObject);    ")
     console.log(hbsObject);
+
+    //  HTTP: GET  =>  RESULT: RENDER (render the handlebars object to a new index html document)
     res.render("index", hbsObject);
     });
 });
 
-// sql insert route
-//orm params are:  (col, val, cb)
-router.post("/api/burgers/create", function(req,res){
-    burger.insertOne(req.body.burger_name,
-         req.body.devoured, function(result){
-            console.log(" LOG result >>>>  @ /api/burgers/create >>> " + result)
-             res.json({ id: result.insertId });
-             res.redirect("/");
-         });
-});
 
-// sql update route
-// orm params are targetTable, col1, val1, cb;
+
+// controller that uses an API call route to create a new burger
+router.post("/api/burgers", function(req,res){
+    burger.insertOne(
+        ["burger_name"],
+        [req.body.burger_name],
+        result => {
+            res.json({ id: result.insertId });
+        }
+    );
+}); 
+
+
+
+// controller that uses an API call route to update an existing burger
 router.put("/api/burgers/:id", function(req,res){
     var condition = "id = " + req.params.id; 
 
@@ -45,5 +50,21 @@ router.put("/api/burgers/:id", function(req,res){
         }
     });
 });
+
+
+// controller that uses an API call route to DELETE an existing burger
+router.delete("/api/burgers/:id", function(req,res){
+    let condition = "id = " + req.params.id; 
+    console.log(" condition: ", condition);
+
+    burger.deleteOne(condition, result => {
+        if(result.affectedRows === 0){
+            return res.status(404).end();
+        } else {
+            res.status(200).end();
+        }
+    });
+});
+
 
 module.exports = router; 

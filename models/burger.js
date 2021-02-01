@@ -1,29 +1,38 @@
- const orm = require('../config/orm.js');
- const connection = require('../config/connection.js');
+// import ORM to interact with database
+var orm = require('../config/orm.js');
 
  var burger = {
 
+    // use ORM to retrieve all burgers from database
     selectAll: function(cb){
         orm.selectAll("burgers", function(res){
-            console.log(res);
-            cb(res);
+               console.log(res);
+               cb(res);
         });
     },
 
-    insertOne: function(col, val, cb){
-        orm.insertOne("burgers", col, val, function(res){
-            console.log(res);
-            cb(res);
+    // array variables are passed into cols and vals parameters
+    // cols specifies where the vals should be inserted in the burgers database
+    insertOne: function(cols, vals, cb){
+        orm.insertOne("burgers", cols, vals, function(res){    
+            console.log(res);  
+            cb(res);  
         });
     },
 
-     //ORM params:  targetTable, col1, val1, cb;
     updateOne: function(col, val, cb){
         orm.insertOne("burgers", col, val, function(res){
             console.log(res);
-            cb(res);
+            cb(res);  
+        });
+    },
+
+    deleteOne: function(condition, cb){
+        orm.deleteOne("burgers", condition, result => {
+            cb(result); 
         });
     }
 
- };
+ }; // end burger
+
  module.exports = burger; 

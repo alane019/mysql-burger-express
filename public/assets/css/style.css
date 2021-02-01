@@ -1,0 +1,148 @@
+
+
+html{
+    background-image: url("../images/grn.jpg");
+    background-repeat: repeat-n;
+    background-size: cover;
+
+}
+
+
+
+.green-text{
+    color: #88c723;
+    text-shadow: black 2px -3px 4px;
+
+}
+
+body{
+    background:  linear-gradient(to top, #31213a85 0%, #3b3f235d 52%, #4a1c4e81 100%);
+    margin: 0px !important;
+    min-height: 100vh;   
+    padding: 11px 15px !important;
+}
+
+.burger-col{
+    margin: 10px;
+    border:rgba(17, 32, 41, 0.852) solid 1.5px;
+    box-shadow: rgb(29 1 1 / 78%) -6px -16px 17px 6px;
+}
+
+
+#page-container{
+  padding: 10px 15px !important; 
+  margin: 0px !important;
+  min-height: 100vh;  
+
+}
+
+h2{
+    color: blue; 
+    font-size: 120%;
+}
+
+.burger-title{
+    letter-spacing: 1px;
+    text-shadow: 2px -3px 16px #88c723;
+    font-size: xx-large;
+}
+
+#burgerman{
+    opacity: 90%;
+    width: 300px;
+}
+
+ul li {
+    font-size: 15px;
+    margin: 2.5px;
+    padding: 2px;
+    border: gray solid 1.3px;
+    width: fit-content !important;
+    min-width: 325px;
+    border-radius: 5px;
+    background-color: rgba(99, 84, 53, 0.452);
+}
+
+
+
+
+button{
+   margin: 9px; 
+}
+
+.column, .columns {
+ border: black solid 1px;
+ border: 3px; 
+ padding: 3px;
+
+}
+
+
+figure, figcaption {
+    margin-left: 7%;
+    color:rgba(216, 216, 216, 0.158);
+    position: relative;
+    top: -15px;
+    display: block;
+    font-style: italic;
+    font-size: 8px;
+    font-variant: small-caps;
+}
+
+figcaption{
+    left: 52px;
+}
+
+
+
+#new_burger{
+    margin: 9px;
+    max-width: 75%;
+    background-color:rgba(255, 255, 255, 0.884);
+    font-size: 200%;
+}
+
+form button{
+    font-size: 14pt;
+    color:white;
+    background-color:rgb(17, 80, 43);
+    border:2px solid #0b140265;
+    padding:10px 20px;
+    border-radius: 6px;
+    box-shadow: rgba(13, 31, 27, 0.322) -2px -1px 4px 6px;
+
+}
+
+
+footer{
+    position: sticky;
+    left: 0; 
+    bottom: 0;
+    border: inset 1.25px rgba(99, 84, 53, 0.452);
+    text-align: center;  
+    background: linear-gradient(to right, #0ebeb53f, #012ffa5e 70%); 
+    max-width: 90%;
+    padding: 5px 20px;
+        
+}
+
+form{
+    background-color: rgba(30, 36, 49, 0.932);
+    padding-top: 10px;
+    border-radius: 5px;
+}
+
+form label{
+    color: whitesmoke
+}
+
+#other-footer-content{
+    text-align: right; 
+    color:rgba(143, 189, 214, 0.555);
+    font-family: 'Courier New', Courier, monospace;
+    margin-right: 20%;
+
+}
+
+
+   
