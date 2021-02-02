@@ -21,7 +21,7 @@ if(process.env.JAWSDB_URL) {
     // either type of connection will connect here and log error, if exists. 
     connection.connect((err) => {
         if (err) {
-            console.error(err);
+           throw err;
         }
             // if there are errors connecting in herko env, these might need to be removed;
             console.log(` user: ${connection.config.user}`);
