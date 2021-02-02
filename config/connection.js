@@ -24,11 +24,13 @@ if(process.env.JAWSDB_URL) {
            throw err;
         }
             // if there are errors connecting in herko env, these might need to be removed;
+           /*
             console.log(` user: ${connection.config.user}`);
             console.log(` connected to database: ${connection.config.database}`);
             console.log(`   port: ${connection.config.port}`);
             console.log(`   host: ${connection.config.host}`);  
             console.log("");
+            */
     }); 
 
     module.exports = connection;
