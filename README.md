@@ -1,7 +1,11 @@
 # MySQL Burger Express
-  Demo is viewable here: [https://alane019.github.io/mysql-burger-express/](https://alane019.github.io/mysql-burger-express/)
+
+### This is fully functional now. Once deployed to Heroku cloud environment it will be viewable here:
+   * <https://alane019.github.io/mysql-burger-express/>
  
-  This hamburger-themed project serves as a demonstration of the MVC design pattern, using Node, MySQL, Express, and Handlebars as the html templating engine for the view portion. In addition, this project demonstrates deployment of a full stack web application to a Heroku cloud environment.
+[//]: # (markdown comment:  https://alane019.github.io/mysql-burger-express/  )
+
+  This hamburger-themed project serves as a demonstration of the MVC design pattern, using Node.js runtime, MySQL database, and Express.js web server. Handlebars is used as the html templating engine for the view portion of the project. In addition, this project demonstrates deployment of a full stack web application to a Heroku cloud environment. However, if you have Node.js installed on your operating system, you can follow the simple installation steps below to preview the application by navigating to <localhost:8080> in a web browser once Node is used to run the server.js file, which allows the web server to begin listening for web requests at the specified port on localhost (again, 8080 is default, but that can be adjusted in the connection.js file, within the config directory).
 
   ![screenshot.png](https://raw.githubusercontent.com/alane019/mysql-burger-express/main/public/assets/images/screenshot.PNG)
 
