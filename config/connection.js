@@ -12,6 +12,8 @@ if(process.env.JAWSDB_URL) {
         host: 'localhost',
         port: 3306,
         user: 'root',
+        // note password used for test/example purposes only
+        // environment variable can substitute viewable text password
         password: 'root',
         database: 'burgers_db'
     });
