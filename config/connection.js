@@ -31,9 +31,7 @@ if(process.env.JAWSDB_URL) {
             console.log("");
     }); 
 
-    module.exports = connection;  
-
-
+    module.exports = connection;
 
 
 
