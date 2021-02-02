@@ -20,8 +20,9 @@ var orm = require('../config/orm.js');
         });
     },
 
-    updateOne: function(col, val, cb){
-        orm.insertOne("burgers", col, val, function(res){
+    // col
+    updateOne: function(cols, condition, cb){
+        orm.updateOne("burgers", cols, condition, function(res){
             console.log(res);
             cb(res);  
         });

@@ -51,7 +51,17 @@ $(function() {
  });
  
  // - - - Delete burger - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - 
+ $(".delete-burger").on("click", function(event){
+     let id = $(this).data("id"); 
+     console.log("let id = $(this).data('id'); >>  [console.log] >> ", id);
 
+     $.ajax("/api/burgers/" + id, {
+         type: "DELETE",
+     }).then(function(){
+         console.log("Deleted burger with id: ", id);
+         location.reload(); 
+     })
+ })
 
 
 }); // - - - - - End of main jquery function  - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - 
