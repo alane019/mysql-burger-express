@@ -10,9 +10,6 @@ var PORT = process.env.PORT || 8080;
 
 //middleware 
 
-
-
-
 //serve static files from public directory
 app.use(express.static("public"));
 
