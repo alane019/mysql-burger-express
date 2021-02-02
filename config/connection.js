@@ -1,17 +1,27 @@
 
-const mysql = require('mysql');
+var mysql = require('mysql');
 
-const connection = mysql.createConnection({
-    host: 'localhost',
-    port: 3306,
-    user: 'root',
-    password: 'root',
-    database: 'burgers_db'
-});
+var connection;
 
+// if JAWSDB_URL process environment variable is detected (i.e., heroku is app environment)
+if(process.env.JAWSDB_URL) {
+    connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+// default connection type (i.e., localhost is app environment)
+    connection = mysql.createConnection({
+        host: 'localhost',
+        port: 3306,
+        user: 'root',
+        password: 'root',
+        database: 'burgers_db'
+    });
+}
+    // either type of connection will connect here and log error, if exists. 
     connection.connect((err) => {
-        if (err) throw err;
-
+        if (err) {
+            console.error(err);
+        }
+            // if there are errors connecting in herko env, these might need to be removed;
             console.log(` user: ${connection.config.user}`);
             console.log(` connected to database: ${connection.config.database}`);
             console.log(`   port: ${connection.config.port}`);
