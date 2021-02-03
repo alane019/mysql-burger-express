@@ -11,7 +11,6 @@ router.get("/", function(req, res){
         var hbsObject = {
             burgers: data
         };
-    console.log(" [[  router.get('/', ---->      console.log(hbsObject);    ")
     console.log(hbsObject);
 
     //  HTTP: GET  =>  RESULT: RENDER (render the handlebars object to a new index html document)
