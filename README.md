@@ -1,7 +1,7 @@
 # MySQL Burger Express
 
-### This is fully functional now. Once deployed to Heroku cloud environment it will be viewable here:
-   * <https://alane019.github.io/mysql-burger-express/>
+### Demo is available on Heroku cloud host:
+   →  <https://mysql-burger-express.herokuapp.com/>
  
 [//]: # (markdown comment:  https://alane019.github.io/mysql-burger-express/  )
 

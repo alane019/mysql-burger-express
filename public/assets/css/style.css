@@ -37,14 +37,19 @@ body{
 }
 
 h2{
-    color: blue; 
+    color: rgba(249, 253, 0, 0.794); 
     font-size: 120%;
+    letter-spacing: 1px;
+    font-weight: bold;
+    text-shadow: black 2px -3px 4px;
 }
 
 .burger-title{
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     text-shadow: 2px -3px 16px #88c723;
     font-size: xx-large;
+    color: rgba(223, 226, 49, 0.459); 
+    font-weight: bold;
 }
 
 #burgerman{
@@ -93,13 +98,11 @@ figcaption{
     left: 52px;
 }
 
-
-
 #new_burger{
     margin: 9px;
     max-width: 75%;
     background-color:rgba(255, 255, 255, 0.884);
-    font-size: 200%;
+    font-size: 150%;
 }
 
 form button{
