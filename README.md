@@ -1,13 +1,16 @@
 # MySQL Burger Express
 
-### Demo is available on Heroku cloud host:
-   →  <https://mysql-burger-express.herokuapp.com/>
+#### Deployed to Heroku envionment → <https://mysql-burger-express.herokuapp.com/>
  
 [//]: # (markdown comment:  https://alane019.github.io/mysql-burger-express/  )
 
-  This hamburger-themed project serves as a demonstration of the MVC design pattern, using Node.js runtime, MySQL database, and Express.js web server. Handlebars is used as the html templating engine for the view portion of the project. In addition, this project demonstrates deployment of a full stack web application to a Heroku cloud environment. However, if you have Node.js installed on your operating system, you can follow the simple installation steps below to preview the application by navigating to <http://localhost:8080> in a web browser once Node is used to run the server.js file, which allows the web server to begin listening for web requests at the specified port on localhost (again, 8080 is default, but that can be adjusted in the connection.js file, within the config directory).
+  This hamburger-themed project serves as a demonstration of the [MVC](https://softwareengineering.stackexchange.com/questions/127624/what-is-mvc-really) design pattern, using [Node.js](https://nodejs.org/en/about/), an [Express](http://expressjs.com/) web server, [MySQL](https://dev.mysql.com/downloads/mysql/) database, and [Handlebars](https://handlebarsjs.com/guide/) is used as the templating engine for the view portion of the project. In addition, this project demonstrates deployment of a full stack web application to a [Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs?singlepage=true) cloud environment. 
+  
+  If you have Node and a MySQL database installed on your operating system, you can follow the simple installation steps below to view the web page in a browser using [localhost](https://www.ionos.com/digitalguide/server/know-how/localhost/). The installation and usage sections below explain how to use Node to run the server.js file, which starts the Express web server, which will begin listening for requests on the specified port on localhost (Port 8080 is default, but that can be adjusted in the connection.js file, within the config directory of this project). 
 
   ![screenshot.png](https://raw.githubusercontent.com/alane019/mysql-burger-express/main/public/assets/images/screenshot.PNG)
+  
+  
 
  # Table of Contents
   * [Installation](#Installation)
